@@ -7,22 +7,23 @@ import time
 import datetime
 import argparse
 
-chunky_path = "ChunkyLauncher.jar"
-scene_dir = "scenes"
-scene_name = "msv4"
+chunky_root_dir = "D:\\Downloads\\Minecraft\\Chunky\\"
+chunky_jar = "ChunkyLauncher.jar"
+scene_dir = "scenes\\"
+scene_name = "msv"
 java_path = "java"
 java_arg = "-Xmx8G"
 chunky_arg = ""
-output_png = "msv4-64"
-backup_dir = "D:\\Backups\\ServerBackup"
+output_png = "msv-64"
+backup_dir = "D:\\Backups\\ServerBackup\\"
 
 
 def get_world_list():
-    return sorted(glob.glob(backup_dir + "\\MoonServer-*\\MoonServer")[:8], reverse=True)
+    return sorted(glob.glob(backup_dir + "MoonServer-*\\MoonServer")[:8], reverse=True)
 
 
 def change_target_world(world_dir):
-    json_path = scene_dir + "\\" + scene_name + "\\" + scene_name + ".json"
+    json_path = chunky_root_dir + scene_dir + scene_name + "\\" + scene_name + ".json"
     with open(json_path, 'r') as f:
         config = json.load(f)
         config['world']['path'] = world_dir
@@ -33,14 +34,14 @@ def change_target_world(world_dir):
 
 
 def render(world_dir):
-    render_command = "{} {} -jar {} -scene-dir {} -render {} -f {}".format(
-        java_path, java_arg, chunky_path, scene_dir, scene_name, chunky_arg
+    render_command = "{} {} -jar {}{} -scene-dir {} -render {} -f {}".format(
+        java_path, java_arg, chunky_root_dir, chunky_jar, chunky_root_dir + scene_dir, scene_name, chunky_arg
     )
     subprocess.call(render_command, shell=True)
 
 
 def batch_render():
-    scene_path = scene_dir + "\\" + scene_name
+    scene_path = chunky_root_dir + scene_dir + "\\" + scene_name
 
     for world in get_world_list():
         change_target_world(world)
