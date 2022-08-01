@@ -29,14 +29,18 @@ You have to create a preset JSON scene file so that Chunky can reuse it to rende
 ![](assets/chunkytutorial.png)
 
 1. Load one of your backup worlds.
-2. Select chunks to render. Be careful - Chunky throws an error when it tries to render chunks that are not generated. You need another scene with the same settings but less chunk range for older worlds that don't have enough chunks to render.
+2. Select chunks to render. **Be careful - Chunky throws an error when it tries to render chunks that are not generated. You need another scene with the same settings but less chunk range for older worlds that don't have enough chunks to render.**
 3. Load selected chunks.
 4. Canvas size. 1920 * 1080 is recommended.
 5. Un-check all entities.
 6. Set the camera. You can do this in Render Preview tab as well.
-7. Target SPP(Samples Per Pixel). 64 is recommended.
+7. Set target SPP(Samples Per Pixel). 64 is recommended.
 8. Save the scene.
 
 ## Rendering (requires Chunky & ffmpeg)
 
 ## Troubleshooting
+
+### Chunky throws ```java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because the return value of "se.llbit.chunky.world.Chunk.getVersion()" is null```  
+
+This happens when Chunky tries to render chunks that are not yet generated. See (2) at **Preparing JSON file**.
