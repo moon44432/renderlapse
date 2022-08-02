@@ -39,9 +39,11 @@ You have to create a preset JSON scene file so that Chunky can reuse it to rende
 
 ## Rendering (requires Chunky & ffmpeg)
 
-### Rendering frames
+### Rendering frames: ```render```, ```ren```
 
-You need Chunky for this since it uses headless rendering mode of Chunky. To render frames, type
+You need Chunky for this since it uses headless rendering mode of Chunky. To render frames, type  
+```python renderlapse.py --chunky-root CHUNKY_ROOT [--chunky-jar CHUNKY_JAR] [--scene-dir SCENE_DIR] --scene-name SCENE_NAME render --backup-dir BACKUP_DIR --world WORLD [--jre-path JRE_PATH] [--jre-mem JRE_MEM] [--jre-arg JRE_ARG] [--chunky-arg CHUNKY_ARG]```.  
+The brackets around a parameter means that it is optional. To see help, type ```python renderlapse.py render -h```.
 
 ### Generating video
 
