@@ -39,6 +39,12 @@ You have to create a preset JSON scene file so that Chunky can reuse it to rende
 
 ## Rendering (requires Chunky & ffmpeg)
 
+### Rendering frames
+
+You need Chunky for this since it uses headless rendering mode of Chunky. To render frames, type
+
+### Generating video
+
 ## Troubleshooting
 
 ### Chunky throws ```java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because the return value of "se.llbit.chunky.world.Chunk.getVersion()" is null```  
