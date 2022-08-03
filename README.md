@@ -29,7 +29,7 @@ You have to create a preset JSON scene file so that Chunky can reuse it to rende
 ![](assets/chunkytutorial.png)
 
 1. Load one of your backup worlds.
-2. Select chunks to render. **Be careful - Chunky throws an error when it tries to render chunks that are not generated. You need another scene with the same settings but less chunk range for older worlds that don't have enough chunks to render.**
+2. Select chunks to render. **Be careful - Chunky throws an error when it tries to render chunks that are not generated. You need another scene with the same settings but smaller chunk range for older worlds that don't have enough chunks to render.**
 3. Load selected chunks.
 4. Canvas size. 1920 * 1080 is recommended.
 5. Un-check all entities.
@@ -41,11 +41,13 @@ You have to create a preset JSON scene file so that Chunky can reuse it to rende
 
 ### Rendering frames: ```render```, ```ren```
 
-You need Chunky for this since it uses headless rendering mode of Chunky. To render frames, type  
 ```python renderlapse.py --chunky-root CHUNKY_ROOT [--chunky-jar CHUNKY_JAR] [--scene-dir SCENE_DIR] --scene-name SCENE_NAME render --backup-dir BACKUP_DIR --world WORLD [--jre-path JRE_PATH] [--jre-mem JRE_MEM] [--jre-arg JRE_ARG] [--chunky-arg CHUNKY_ARG]```.  
 The brackets around a parameter means that it is optional. To see help, type ```python renderlapse.py render -h```.
 
-### Generating video
+### Generating video: ```genvideo```, ```vid```
+
+```python renderlapse.py --chunky-root CHUNKY_ROOT [--chunky-jar CHUNKY_JAR] [--scene-dir SCENE_DIR] --scene-name SCENE_NAME genvideo [--ffmpeg-path FFMPEG_PATH] [--ffmpeg-arg FFMPEG_ARG] [--framerate FRAMERATE] [--vid-path VID_PATH] [--frame-duration FRAME_DURATION] [--sync]```.  
+The brackets around a parameter means that it is optional. To see help, type ```python renderlapse.py genvideo -h```.
 
 ## Troubleshooting
 
