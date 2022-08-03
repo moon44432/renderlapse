@@ -1,5 +1,6 @@
 # renderlapse: Create timelapse video from Minecraft world backups
 
+[![A 7-Year Timelapse of Minecraft MoonServer](http://img.youtube.com/vi/QiGmB127Nfs/0.jpg)](https://youtu.be/QiGmB127Nfs)  
 This program creates a timelapse video from your Minecraft world backups. It uses Chunky to render a screenshot of each of the worlds, and ffmpeg to concatenate screenshots into a video.
 
 ## Preparing World Backups
