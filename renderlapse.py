@@ -23,8 +23,8 @@ if __name__ == "__main__":
     parser_ren.add_argument('--world', help="your world name", required=True)
     parser_ren.add_argument('--jre-path', help="JRE path", default="java")
     parser_ren.add_argument('--jre-mem', help="memory allocated to JRE, in GB", default=4, type=int)
-    parser_ren.add_argument('--jre-arg', help="additional JRE arguments")
-    parser_ren.add_argument('--chunky-arg', help="additional Chunky arguments")
+    parser_ren.add_argument('--jre-arg', help="additional JRE arguments", default="")
+    parser_ren.add_argument('--chunky-arg', help="additional Chunky arguments", default="")
     parser_ren.set_defaults(func=batch_render)
 
     parser_gen.add_argument('--ffmpeg-path', help="ffmpeg path", default="ffmpeg")

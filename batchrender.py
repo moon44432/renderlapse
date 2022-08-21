@@ -38,7 +38,7 @@ def batch_render(args):
 
     for world in get_world_list(args):
         change_target_world(world, json_path)
-        render(world)
+        render(args)
         
         for dump in glob.glob(scene_folder + "\\" + "*.dump"):
             os.remove(dump)
