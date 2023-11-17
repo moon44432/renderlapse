@@ -30,13 +30,14 @@ Create a preset JSON scene file so that Chunky can reuse it to render multiple w
 ![](assets/chunkytutorial.png)
 
 1. Load one of your backup worlds.
-2. Select chunks to render. **Be careful - Chunky throws an error when it tries to render chunks that are not generated. You need another scene with the same settings but smaller chunk range for older worlds that don't have enough chunks to render.**
+2. Select chunks to render. **If you want to shoot a timelapse from the very beginning of your world, it might not be enough with only one preset. If that's the case, see 9.**
 3. Load selected chunks.
 4. Canvas size. 1920 * 1080 is recommended.
 5. Un-check all entities.
 6. Set the camera. You can do this in Render Preview tab as well.
-7. Set target SPP(Samples Per Pixel). 64 is recommended.
+7. Set target SPP(Samples Per Pixel). 64 or above is recommended.
 8. Save the scene.
+**9. Be careful - Chunky throws an error or produces weird artifacts when it tries to render empty chunks. If your early backups are not big enough to completely fill the scene's chunk range, just duplicate the scene and manually reduce the chunk range to fit in older worlds.**
 
 ## Rendering (requires Chunky & ffmpeg)
 
@@ -54,4 +55,4 @@ Brackets around a parameter indicate that it is optional. For help, type ```pyth
 
 ### Chunky throws ```java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because the return value of "se.llbit.chunky.world.Chunk.getVersion()" is null```  
 
-This error occurs when Chunky attempts to render chunks that have not yet been generated. See (2) at **Preparing JSON file**.
+This error occurs when Chunky attempts to render chunks that have not been generated. It happens when you try to render an early backup which is smaller than the preset chunk range. See (9) at **Preparing JSON file**.
