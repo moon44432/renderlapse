@@ -37,7 +37,7 @@ Create a preset JSON scene file so that Chunky can reuse it to render multiple w
 6. Set the camera. You can do this in Render Preview tab as well.
 7. Set target SPP(Samples Per Pixel). 64 or above is recommended.
 8. Save the scene.
-**9. Be careful - Chunky throws an error or produces weird artifacts when it tries to render empty chunks. If your early backups are not big enough to completely fill the scene's chunk range, just duplicate the scene and manually reduce the chunk range to fit in older worlds.**
+9. **Be careful - Chunky throws an error or produces weird artifacts when it tries to render empty chunks. If your early backups are not big enough to completely fill the scene's chunk range, just duplicate the scene and manually reduce the chunk range to fit in older worlds.**
 
 ## Rendering (requires Chunky & ffmpeg)
 
